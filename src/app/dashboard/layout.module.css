@@ -1,0 +1,228 @@
+.layoutContainer {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+}
+
+.sidebar {
+  width: 260px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid var(--glass-border);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1rem;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--glass-border);
+  margin-bottom: 1rem;
+}
+
+.logo {
+  width: 38px;
+  height: 38px;
+}
+
+.logoTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.logoSub {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.6rem 0.85rem;
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: var(--transition-fast);
+}
+
+.menuItem:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+}
+
+.menuItemActive {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, #4f46e5 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.15);
+}
+
+.menuItemActive:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--accent-primary) 0%, #4f46e5 100%);
+}
+
+.profileArea {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--glass-border);
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--accent-primary);
+  object-fit: cover;
+}
+
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.profileName {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.profileRole {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.logoutBtn {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: var(--transition-fast);
+}
+
+.logoutBtn:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ffffff;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  height: 65px;
+  background: rgba(10, 15, 29, 0.4);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.classBadge {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.noClassBadge {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--warning);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.contentBody {
+  flex-grow: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+@media (max-width: 992px) {
+  .sidebar {
+    width: 70px;
+    padding: 1rem 0.4rem;
+    align-items: center;
+  }
+  .logoTitle, .logoSub, .profileDetails, .menuItem span, .logoutBtn span {
+    display: none;
+  }
+  .logoArea {
+    justify-content: center;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .menuItem {
+    justify-content: center;
+    padding: 0.6rem;
+  }
+  .profileArea {
+    align-items: center;
+  }
+}
