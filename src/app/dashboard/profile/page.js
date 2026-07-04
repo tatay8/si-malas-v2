@@ -179,7 +179,7 @@ export default function EditProfile() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: var(--shadow-sm)
+                boxShadow: 'var(--shadow-sm)'
               }}
               title="Unggah Foto Profil"
             >
